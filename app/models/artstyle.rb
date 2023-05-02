@@ -8,5 +8,5 @@
 #  updated_at :datetime         not null
 #
 class Artstyle < ApplicationRecord
-  # has_many(:brushes, { :class_name => "Brush", :foreign_key => "artstyle_id", :dependent => :nullify })
+  has_many(:brushes, { :class_name => "Brush", :foreign_key => "artstyle_id", :dependent => :nullify })
 end
