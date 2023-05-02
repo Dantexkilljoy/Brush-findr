@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Program resource:
+
+  # CREATE
+  post("/insert_program", { :controller => "programs", :action => "create" })
+          
+  # READ
+  get("/programs", { :controller => "programs", :action => "index" })
+  
+  get("/programs/:path_id", { :controller => "programs", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_program/:path_id", { :controller => "programs", :action => "update" })
+  
+  # DELETE
+  get("/delete_program/:path_id", { :controller => "programs", :action => "destroy" })
+
+  #------------------------------
+
   get("/", { controller: "artstyles", action: "index" })
 
   # Routes for the Artstyle resource:
