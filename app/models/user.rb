@@ -3,9 +3,7 @@
 # Table name: users
 #
 #  id              :integer          not null, primary key
-#  brushes_count   :integer
 #  email           :string
-#  favorites_count :integer
 #  password_digest :string
 #  username        :string
 #  created_at      :datetime         not null

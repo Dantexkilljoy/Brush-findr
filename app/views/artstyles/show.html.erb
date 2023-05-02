@@ -1,0 +1,71 @@
+<div>
+  <div>
+    <h1>
+      Artstyle #<%= @the_artstyle.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/artstyles">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_artstyle/<%= @the_artstyle.id %>">
+          Delete artstyle
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Name
+      </dt>
+      <dd>
+        <%= @the_artstyle.name %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_artstyle.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_artstyle.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit artstyle
+    </h2>
+
+    <form action="/modify_artstyle/<%= @the_artstyle.id %>"  method="post" >
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name" value="<%= @the_artstyle.name %>">
+      </div>
+
+      <button>
+        Update artstyle
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
