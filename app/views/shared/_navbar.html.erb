@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
   <div class="container">
     <a class="navbar-brand" href="/">
-      FinalProject
+      BrushFindr
     </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsible-nav-links" aria-controls="collapsible-nav-links" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,12 +15,24 @@
             Resources
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <% if @current_user != nil %>
             <a href="/programs" class="dropdown-item">
-              Programs
+              Programs We Support
             </a>
             <a href="/artstyles" class="dropdown-item">
-              Artstyles
+              Popular Digital Artstyles
             </a>
+            <a href="/user_sign_out" class="dropdown-item">
+              Sign Out
+            </a>
+            <a href="/brushes" class="dropdown-item">
+              Your Favorited Brushes
+            </a>
+          <% else %>
+            <a href="/user_sign_in" class="dropdown-item">
+              Sign In
+            </a>
+          <% end %>
           </div>
         </li>
       </ul>

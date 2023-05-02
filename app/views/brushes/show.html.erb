@@ -1,0 +1,131 @@
+<div>
+  <div>
+    <h1>
+      Brush #<%= @the_brush.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/brushes">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_brush/<%= @the_brush.id %>">
+          Delete brush
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Artstyle
+      </dt>
+      <dd>
+        <%= @the_brush.artstyle_id %>
+      </dd>
+
+      <dt>
+        Program
+      </dt>
+      <dd>
+        <%= @the_brush.program_id %>
+      </dd>
+
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_brush.user_id %>
+      </dd>
+
+      <dt>
+        Brush name
+      </dt>
+      <dd>
+        <%= @the_brush.brush_name %>
+      </dd>
+
+      <dt>
+        Website name
+      </dt>
+      <dd>
+        <%= @the_brush.website_name %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_brush.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_brush.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit brush
+    </h2>
+
+    <form action="/modify_brush/<%= @the_brush.id %>"  method="post" >
+      <div>
+        <label for="artstyle_id_box">
+          Artstyle
+        </label>
+
+        <input type="text" id="artstyle_id_box" name="query_artstyle_id" value="<%= @the_brush.artstyle_id %>">
+      </div>
+
+      <div>
+        <label for="program_id_box">
+          Program
+        </label>
+
+        <input type="text" id="program_id_box" name="query_program_id" value="<%= @the_brush.program_id %>">
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_brush.user_id %>">
+      </div>
+
+      <div>
+        <label for="brush_name_box">
+          Brush name
+        </label>
+
+        <input type="text" id="brush_name_box" name="query_brush_name" value="<%= @the_brush.brush_name %>">
+      </div>
+
+      <div>
+        <label for="website_name_box">
+          Website name
+        </label>
+
+        <input type="text" id="website_name_box" name="query_website_name" value="<%= @the_brush.website_name %>">
+      </div>
+
+      <button>
+        Update brush
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

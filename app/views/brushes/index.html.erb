@@ -1,0 +1,150 @@
+<div>
+  <div>
+    <h1>
+      List of all brushes
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new brush
+    </h2>
+
+    <form action="/insert_brush" method="post">
+      <div>
+        <label for="artstyle_id_box">
+          Artstyle
+        </label>
+
+        <input type="text" id="artstyle_id_box" name="query_artstyle_id">
+      </div>
+
+      <div>
+        <label for="program_id_box">
+          Program
+        </label>
+
+        <input type="text" id="program_id_box" name="query_program_id">
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id">
+      </div>
+
+      <div>
+        <label for="brush_name_box">
+          Brush name
+        </label>
+
+        <input type="text" id="brush_name_box" name="query_brush_name">
+      </div>
+
+      <div>
+        <label for="website_name_box">
+          Website name
+        </label>
+
+        <input type="text" id="website_name_box" name="query_website_name">
+      </div>
+
+      <button>
+        Create brush
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Artstyle
+        </th>
+
+        <th>
+          Program
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Brush name
+        </th>
+
+        <th>
+          Website name
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_brushes.each do |a_brush| %>
+      <tr>
+        <td>
+          <%= a_brush.id %>
+        </td>
+
+        <td>
+          <%= a_brush.artstyle_id %>
+        </td>
+
+        <td>
+          <%= a_brush.program_id %>
+        </td>
+
+        <td>
+          <%= a_brush.user_id %>
+        </td>
+
+        <td>
+          <%= a_brush.brush_name %>
+        </td>
+
+        <td>
+          <%= a_brush.website_name %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_brush.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_brush.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/brushes/<%= a_brush.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>
